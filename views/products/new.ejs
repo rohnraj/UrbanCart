@@ -1,0 +1,70 @@
+<% layout('layouts/boilerPlate') %>
+  <%- include('../partials/navbar') %>
+    <!-- layout mai boilerplate dediya -->
+    <!-- input ke name mai woh hi naam daalo joh DB ke schema mai naam dala hai -->
+    <div class="mx-auto">
+        <!-- //required-> input hai required hona zaroori hai for client side velidation
+         //novalidation -> schema se jake dekhe gya required hai ki nhi this is server side validation -->
+        <form action="/products" method="POST" class="needs-validation" novalidate>
+            <div class="mb-3">
+                <label for="naam">Name: </label>
+                <input type="text" id="naam" placeholder="Name of the porduct" class="form-control" name="name" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+                <div class="invalid-feedback">
+                    Please choose a username.
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="image">img: </label>
+                <input type="text" id="image" placeholder="Add product's image" class="form-control" name="img" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+                <div class="invalid-feedback">
+                    Please choose a username.
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="paisa">Price: </label>
+                <input type="text" id="paisa" placeholder="Add product's price" class="form-control" name="price" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+                <div class="invalid-feedback">
+                    Please choose a username.
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="des">Description: </label>
+                <textarea name="desc" id="des" row="5" placeholder="Add description"></textarea>
+            </div>
+
+            <button type="submit" class="btn-sm btn-success">Add Product</button>
+        </form>
+    </div>
+
+    <script> //iife -> immidiate invoke function expression
+        (() => {
+  'use strict'
+
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  const forms = document.querySelectorAll('.needs-validation')
+
+  // Loop over them and prevent submission
+  Array.from(forms).forEach(form => {
+    form.addEventListener('submit', event => {
+      if (!form.checkValidity()) {
+        event.preventDefault()
+        event.stopPropagation()
+      }
+
+      form.classList.add('was-validated')
+    }, false)
+  })
+})()
+    </script>

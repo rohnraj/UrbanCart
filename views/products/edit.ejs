@@ -1,0 +1,32 @@
+<% layout('layouts/boilerPlate') %>
+  <% include('../partials/navbar') %>
+    <!-- layout mai boilerplate dediya -->
+    <!-- input ke name mai woh hi naam daalo joh DB ke schema mai naam dala hai -->
+    <div class="mx-auto">
+        <form action="/products/<%=oneProduct._id%>?_method=PATCH" method="POST">
+            <div class="mb-3">
+                <label for="naam">Name: </label>
+                <input type="text" id="naam" value="<%=oneProduct.name%>" class="form-control" name="name">
+
+            </div>
+
+            <div class="mb-3">
+                <label for="image">img: </label>
+                <input type="text" id="image" value="<%=oneProduct.img%>" class="form-control" name="img">
+
+            </div>
+
+            <div class="mb-3">
+                <label for="paisa">Price: </label>
+                <input type="text" id="paisa" value="<%=oneProduct.price%>" class="form-control" name="price">
+                
+            </div>
+
+            <div class="mb-3">
+                <label for="des">Description: </label>
+                <textarea name="desc" id="des" row="5" placeholder="add description"><%=oneProduct.desc%></textarea>
+            </div>
+
+            <button class="btn btn-primary">Make Updates</button>
+        </form>
+    </div>

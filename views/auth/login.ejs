@@ -1,0 +1,21 @@
+<% layout('layouts/boilerPlate') %>
+<%- include('../partials/flash') %>
+
+<div class="row">
+    <div class="col-md-6 mx-auto">
+        <h1 class="display-6">Login</h1>
+        <form action="/login" method="post">
+            <div>
+                <label for="" class="form-label">Username: </label>
+                <input type="text" class="form-control" name="username" placeholder="Username">
+            </div>
+            
+            <div>
+                <label for="" class="form-label">password: </label>
+                <input type="password" class="form-control" name="password" placeholder="password">
+            </div>
+            <button class="btn btn-sm btn-success">Login</button>
+            <p class="fw-light mt-2">Dont have an account, <a href="/register">SignUp</a></p>
+        </form>
+    </div>
+</div>
